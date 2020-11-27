@@ -51,14 +51,16 @@
             <span><input type="text" name="username" id="username"></span>
         </div>
         <div>
-            密码<span class="red">*</span>
+            密码<span class="red">*</span>&nbsp;&nbsp;&nbsp;
             <span><input type="password" name="password" id="password"></span>
         </div>
-
-        <img src="/msgsys/kaptcha.jpg" style="width: 100px;height: 30px"/>
-        <input type="text" name="code" id="code"/>
-        <div>
-            <span><button type="submit">登陆</button></span>
+        <div style="padding-left: 5px;">
+            <span>验证码</span>
+            <input type="text" name="code" id="code"/>
+            <img src="/msgsys/kaptcha.jpg" style="width: 100px;height: 30px;"/>
+        </div>
+        <div style="padding-left: 50px">
+            <span><button type="submit">登陆</button></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <span><button type="button" onclick="toRegister()">注册</button></span>
         </div>
     </form>

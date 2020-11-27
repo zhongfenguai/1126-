@@ -17,10 +17,10 @@ import static com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY;
 /**
  * 作者：chenbingfeng
  * 日期: 2020/11/26 17:49
- * 描述:
+ * 描述:注册
  */
 @WebServlet("/user.do")
-public class UserServlet extends BaseServlet {
+public class UserServlet extends BaseServlet {//继承BaseServlet 调用指定方法
     UserService userService = new UserServiceImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -36,6 +36,7 @@ public class UserServlet extends BaseServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
+
         User user = new User(username, password, email);
         int result = userService.register(user);
         System.out.println(result);

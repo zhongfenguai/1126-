@@ -10,6 +10,24 @@ public class User {
     private String username;
     private String password;
     private String email;
+    private String imgPath;
+
+
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
+    }
+
+    public User(Integer id, String username, String password, String email, String imgPath) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.imgPath = imgPath;
+    }
 
     public User(String username, String password, String email) {
         this.username = username;
@@ -56,6 +74,7 @@ public class User {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
+                ", imgPath='" + imgPath + '\'' +
                 '}';
     }
 

@@ -20,8 +20,12 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
+/**
+ *更改信息
+ */
 @WebServlet("/fileUpload")
 public class FileUploadServlet extends HttpServlet {
+
     UserDao userDao = null;
 
     public FileUploadServlet() {
@@ -61,6 +65,7 @@ public class FileUploadServlet extends HttpServlet {
                                 break;
                             case "email":
                                 user.setEmail(fileItem.getString("UTF-8"));
+                                break;
                         }
                     } else {
                         //上传的文件

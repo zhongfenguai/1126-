@@ -56,6 +56,7 @@
             邮箱<span class="red">*</span>
             <span><input type="text" name="email" id="email"></span>
         </div>
+
         <div>
             <span><button type="submit">注册</button></span>
         </div>

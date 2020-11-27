@@ -1,6 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.msgsys.entity.Message" %>
 <%@ page import="com.msgsys.entity.User" %>
+<%@ page import="java.net.URLEncoder" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -74,11 +75,14 @@
 %>
 <div class="wrapper">
     <div class="header">
-        <div class="menu">
-            <span>当前用户：<%=user.getUsername() %>  </span><span></span>
-            <span><a href="#">发送消息</a><a href="logout.jsp">退出</a></span>
+        <div class="menu" style="font-size:25px;">
+            <img src="/msgsys/fileDownload?path=<%=URLEncoder.encode(user.getImgPath(),"UTF-8")%>&name=<%=user.getUsername()%>"
+                 width="100px" height="100px"/>
+            <span>当前用户：<%=user.getUsername() %>  </span>
+            <span style="float: right"><a href="fileUpload.html">修改个人信息</a> <a href="#">发送消息</a><a href="logout.jsp">退出</a></span>
         </div>
     </div>
+
     <div class="clear"></div>
     <div class="content">
         <ul>
@@ -119,10 +123,10 @@
             <%--</span>--%>
             <%--<span class="bordstyle"></span><span><a href="msg.do?oper=query&id="></a></span>--%>
             <%--<span class="rfloat">--%>
-                        <%--<span><a href="#">删除</a></span>--%>
-                        <%--<span><a href="#">回信</a></span>--%>
-                        <%--<span></span>--%>
-                    <%--</span>--%>
+            <%--<span><a href="#">删除</a></span>--%>
+            <%--<span><a href="#">回信</a></span>--%>
+            <%--<span></span>--%>
+            <%--</span>--%>
             <%--</li>--%>
 
         </ul>

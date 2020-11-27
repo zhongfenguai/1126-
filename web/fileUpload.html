@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改用户信息</title>
+</head>
+<style type="text/css" rel="stylesheet">
+    .wrapper {
+        width: 500px;
+        font-size: 14px;
+        border: 1px black solid;
+    }
+
+    .wrapper div {
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .bb {
+        font-weight: bold;
+        font-size: 18px;
+        background-color: aliceblue;
+        padding: 10px;
+        width: 482px;
+    }
+</style>
+<body>
+<div class="bb">修改信息</div>
+<div class="wrapper">
+    <form method="post" enctype="multipart/form-data" action="/msgsys/fileUpload">
+        <div>用户名:<input name="username" type="text"/><br/>
+        </div>
+        <div>密 码: <input name="password" type="text"/><br/></div>
+        <div>邮 箱: <input name="email" type="text"/><br/></div>
+        <div>上传头像:<input name="file" type="file"/><br/></div>
+
+        <div>
+            <button type="submit">提交</button>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>
