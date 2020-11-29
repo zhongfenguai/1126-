@@ -8,7 +8,7 @@ import java.text.DateFormat;
  * 描述:
  */
 public class ConstData {
-    public static final String DATE_FORMAT_STR = "yyyy年MM月dd日HH时mm分ss秒";
+    public static final String DATE_FORMAT_STR = "yyyy-MM-dd-HH-mm-ss";
     public static final Integer MESSAGE_ISREAD_NOT = 0;
     public static final Integer MESSAGE_ISREAD_YES = 1;
 }

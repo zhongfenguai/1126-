@@ -94,7 +94,7 @@
         <form action="message.do">
             <input type="hidden" name="action" value="send"/>
             <div class="content-top">
-                <span>标题：<input name="mtitle" type="text"/> </span><<br/>
+                <span>标题：<input name="mtitle" type="text"/> </span>  <br/>
                 <span>发至邮件地址：<input name="email" type="text"/> </span>
                 <span></span>
             </div>

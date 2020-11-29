@@ -58,7 +58,7 @@ public class MessageServlet extends BaseServlet {
         queryList(request, response);
 
     }
-
+//发送邮件
     public void send(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String title = request.getParameter("mtitle");
         String email = request.getParameter("email");
@@ -79,7 +79,6 @@ public class MessageServlet extends BaseServlet {
             message.setFromUid(fromuser.getId());
             message.setToUid(toUser.getId());
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat(ConstData.DATE_FORMAT_STR);
-
             message.setCreateTime(simpleDateFormat.format(new Date()));
             message.setmContent(mcontent);
             message.setReadFlag(ConstData.MESSAGE_ISREAD_NOT);

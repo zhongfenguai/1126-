@@ -60,7 +60,7 @@ public class UserServlet extends BaseServlet {//继承BaseServlet 调用指定�
 //            response.sendRedirect(request.getContextPath()+"/list.jsp");
             } else {
                 //登录失败
-                response.sendRedirect(request.getContextPath() + "/login.jsp");
+                response.sendRedirect(request.getContextPath() + "/index.html");
             }
         } else {
             response.setContentType("text/html; charset=utf-8");
