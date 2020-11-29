@@ -16,4 +16,5 @@ public interface UserDao {
     List<User> queryAll();
     User queryUserById(Integer id);
     User queryUserByNameAndPassword(User user);
+    User queryUserByEmail(String email);
 }

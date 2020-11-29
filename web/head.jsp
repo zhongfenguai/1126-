@@ -7,6 +7,7 @@
 --%>
 
 <%
+    //到工程名的路径
     String bastPath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath()+"/";
 %>
 

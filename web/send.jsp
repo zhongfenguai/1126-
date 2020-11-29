@@ -79,29 +79,33 @@
 </head>
 <body>
 <%
-    Message message = (Message) request.getAttribute("message");
-    User user= (User) request.getAttribute("user");
+    //    Message message = (Message) request.getAttribute("message");
+    User user = (User) session.getAttribute("user");
 %>
 <div class="wrapper">
     <div class="header">
         <div class="menu">
-            <span>当前用户：</span><span></span>
-            <span><a href="send.jsp">发送消息</a><a href="logout.jsp">退出</a></span>
+            <span>当前用户：<%=user.getUsername()%></span><span></span>
+            <span><a href="#">发送消息</a><a href="logout.jsp">退出</a></span>
         </div>
     </div>
     <div class="clear"></div>
     <div class="content">
-        <div class="content-top">
-            <span>标题：<%=message.getmTitle()%></span>
-            <span>来自：<%=user.getUsername()%></span>
-            <span>时间：<%=message.getCreateTime()%></span>
-        </div>
+        <form action="message.do">
+            <input type="hidden" name="action" value="send"/>
+            <div class="content-top">
+                <span>标题：<input name="mtitle" type="text"/> </span><<br/>
+                <span>发至邮件地址：<input name="email" type="text"/> </span>
+                <span></span>
+            </div>
 
-        <div class="content-body">
+            <div class="content-body">
+                消息内容：
+                <textarea rows="20" cols="50" name="mcontent"></textarea>
+            </div>
+            <button type="submit">发送</button>
+        </form>
 
-
-            <%=message.getmContent()%>
-        </div>
 
     </div>
 </div>

@@ -53,6 +53,7 @@ public class UserServlet extends BaseServlet {//继承BaseServlet 调用指定�
             if (user != null) {
                 //将登录的信息传给message，去查邮件
                 HttpSession session = request.getSession();
+                //保存session
                 session.setAttribute("user", user);
                 request.getRequestDispatcher("/message.do?action=queryList").forward(request, response);
                 //登录成功

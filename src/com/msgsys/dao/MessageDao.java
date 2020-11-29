@@ -24,4 +24,6 @@ public interface MessageDao {
     //根据收信人id 查询邮件
     List<Message> queryMessageByToUid(Integer id);
 
+
+
 }

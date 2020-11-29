@@ -3,6 +3,7 @@ package com.msgsys.dao.impl;
 import com.msgsys.dao.BaseDao;
 import com.msgsys.dao.MessageDao;
 import com.msgsys.entity.Message;
+import com.msgsys.entity.User;
 
 import java.util.List;
 

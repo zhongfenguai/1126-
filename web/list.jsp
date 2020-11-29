@@ -4,6 +4,7 @@
 <%@ page import="java.net.URLEncoder" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<%@include file="head.jsp"%>
 <head>
     <title>Title</title>
     <style type="text/css" rel="stylesheet">
@@ -79,7 +80,7 @@
             <img src="/msgsys/fileDownload?path=<%=URLEncoder.encode(user.getImgPath(),"UTF-8")%>&name=<%=user.getUsername()%>"
                  width="100px" height="100px"/>
             <span>当前用户：<%=user.getUsername() %>  </span>
-            <span style="float: right"><a href="fileUpload.html">修改个人信息</a> <a href="#">发送消息</a><a href="logout.jsp">退出</a></span>
+            <span style="float: right"><a href="fileUpload.html">修改个人信息</a> <a href="send.jsp">发送消息</a><a href="logout.jsp">退出</a></span>
         </div>
     </div>
 
@@ -102,9 +103,9 @@
 <%}%>
                     </span>
                 <span class="bordstyle"><%=message.getmTitle()%></span><span><a
-                    href="message.do?action=query&id=<%=message.getId()%>"><%=message.getmContent()%> </a></span>
+                    href="message.do?action=queryDetail&id=<%=message.getId()%>"><%=message.getmContent()%></a></span>
                 <span class="rfloat">
-                        <span><a href="#">删除</a></span>
+                        <span><a href="message.do?action=delete&id=<%=message.getId()%>">删除</a></span>
                         <span><a href="#">回信</a></span>
                         <span><%=message.getCreateTime()%></span>
                     </span>

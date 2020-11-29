@@ -12,6 +12,13 @@ import java.util.List;
 public interface MessageService {
     //根据收信人id 查询邮件
     List<Message> queryMessageByToUid(Integer id);
+
     //根据收信人的id查询邮件
     Message queryMessageByid(Integer id);
+
+    int insert(Message message);
+
+    int update(Message message);
+
+    int delete(Integer id);
 }
