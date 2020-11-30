@@ -85,7 +85,7 @@
 <div class="wrapper">
     <div class="header">
         <div class="menu">
-            <span>当前用户：</span><span></span>
+            <span>当前用户：<%=user.getUsername()%></span><span></span>
             <span><a href="send.jsp">发送消息</a><a href="logout.jsp">退出</a></span>
         </div>
     </div>
@@ -98,7 +98,6 @@
         </div>
 
         <div class="content-body">
-
 
             <%=message.getmContent()%>
         </div>

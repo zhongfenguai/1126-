@@ -60,6 +60,8 @@ public class MessageServlet extends BaseServlet {
     }
 //发送邮件
     public void send(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        response.setContentType("text/html;charset=utf-8");
+        request.setCharacterEncoding("utf-8");
         String title = request.getParameter("mtitle");
         String email = request.getParameter("email");
         String mcontent = request.getParameter("mcontent");
@@ -92,8 +94,9 @@ public class MessageServlet extends BaseServlet {
             }
 
         }
-        request.setAttribute("msg", msg);
-        request.getRequestDispatcher("/result.jsp").forward(request, response);
+        response.getWriter().write(msg);
+//        request.setAttribute("msg", msg);
+//        request.getRequestDispatcher("/result.jsp").forward(request, response);
 
     }
 

@@ -1,10 +1,13 @@
 package com.msgsys.entity;
 
+
+
 /**
  * 作者：chenbingfeng
  * 日期: 2020/11/26 15:39
  * 描述:
  */
+
 public class User {
     private Integer id;
     private String username;
@@ -18,6 +21,13 @@ public class User {
     }
 
     public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
+    }
+
+    public User(String username, String password, String email, String imgPath) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
         this.imgPath = imgPath;
     }
 

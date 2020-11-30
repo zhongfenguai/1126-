@@ -5,6 +5,28 @@
 <html>
 <head>
     <title>Title</title>
+    <script src="static/js/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#ajaxBtn").click(function () {
+                //获取富文本编辑器内容
+                // alert(editor.txt.html());
+                $.ajax({
+                    url: "http://localhost:8066/msgsys/message.do",
+                    data: { action: "send",
+                        mtitle: $("#mtitle").val(),
+                        email: $("#email").val(),
+                        mcontent: editor.txt.html()
+                    },
+                    type: "GET",
+                    dataType: "text",
+                    success: function (data) {
+                        alert(data);
+                    }
+                });
+            });
+        });
+    </script>
     <style type="text/css" rel="stylesheet">
         body {
             margin: 0px;
@@ -91,21 +113,32 @@
     </div>
     <div class="clear"></div>
     <div class="content">
-        <form action="message.do">
-            <input type="hidden" name="action" value="send"/>
+        <form>
+            <%--<input type="hidden" name="action" value="send"/>--%>
             <div class="content-top">
-                <span>标题：<input name="mtitle" type="text"/> </span>  <br/>
-                <span>发至邮件地址：<input name="email" type="text"/> </span>
+                <span>标题：<input name="mtitle" id="mtitle" type="text"/> </span> <br/>
+                <span>发至邮件地址：<input name="email" id="email" type="text"/> </span>
                 <span></span>
             </div>
-
+            消息内容：
             <div class="content-body">
-                消息内容：
-                <textarea rows="20" cols="50" name="mcontent"></textarea>
+                <p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p>
             </div>
-            <button type="submit">发送</button>
+            <button id="ajaxBtn" type="button">发送</button>
+            <%--<button id="ajaxBtn">提交</button>--%>
+            <%--<br/>--%>
+            <%--<div id="msg"></div>--%>
+            <%--<textarea rows="20" cols="50" name="mcontent"></textarea>--%>
         </form>
-
+        <script type="text/javascript" src="https://unpkg.com/wangeditor/dist/wangEditor.min.js"></script>
+        <script type="text/javascript">
+            const E = window.wangEditor;
+            const editor = new E('.content-body');
+            // 或者 const editor = new E( document.getElementById('div1') )
+            // 配置 server 接口地址
+            editor.config.uploadImgServer = 'http://localhost:8066/msgsys/imgUpload';
+            editor.create();
+        </script>
 
     </div>
 </div>

@@ -68,4 +68,37 @@ public class UserServlet extends BaseServlet {//继承BaseServlet 调用指定�
         }
 
     }
+
+    //通过用户名查询用户
+    public void queryUserByUsername(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        //金句：防止中文乱码
+        response.setContentType("text/html;charset=utf-8");
+        request.setCharacterEncoding("utf-8");
+        String username = request.getParameter("username");
+        if (username.isEmpty()) {
+            String message3 = "<font color=\"red\">不能为空</font>";
+            response.getWriter().write(message3);
+        } else {
+            User user = userService.queryUserByUsername(username);
+            String message = (user == null) ? "<font color=\"green\">用户名可用</font>" : "<font color=\"red\">用户名不可用</font>";
+            response.getWriter().write(message);
+        }
+    }
+
+    public void queryUserByEmail(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        //金句：防止中文乱码
+        response.setContentType("text/html;charset=utf-8");
+        request.setCharacterEncoding("utf-8");
+        String email = request.getParameter("email");
+        if (email.isEmpty()) {
+            String message2 = "<font color=\"red\">不能为空</font>";
+            response.getWriter().write(message2);
+        } else {
+            User user = userService.queryUserByEmail(email);
+            String message = (user == null) ? "<font color=\"green\">邮箱能用</font>" : "<font color=\"red\">邮箱不可用</font>";
+            response.getWriter().write(message);
+        }
+
+    }
+
 }

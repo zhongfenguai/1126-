@@ -28,4 +28,6 @@ public interface UserService {
 
     User queryUserByEmail(String email);
 
+    User queryUserByUsername(String usernmae);
+
 }

@@ -14,8 +14,8 @@ import java.util.List;
 public class UserDaoImpl extends BaseDao implements UserDao {
     @Override
     public int insert(User user) {
-        String sql = "INSERT INTO T_user (username,password,email)values(?,?,?)";
-        return update(sql, user.getUsername(), user.getPassword(), user.getEmail());
+        String sql = "INSERT INTO T_user (username,password,email,imgPath)values(?,?,?,?)";
+        return update(sql, user.getUsername(), user.getPassword(), user.getEmail(),user.getImgPath());
     }
 
     @Override
@@ -53,5 +53,11 @@ public class UserDaoImpl extends BaseDao implements UserDao {
     public User queryUserByEmail(String email) {
         String sql = "select *from T_user where email=?";
         return queryForOne(User.class,sql,email);
+    }
+
+    @Override
+    public User queryUserByUsername(String usernmae) {
+        String sql = "select *from T_user where username=?";
+        return queryForOne(User.class,sql,usernmae);
     }
 }
